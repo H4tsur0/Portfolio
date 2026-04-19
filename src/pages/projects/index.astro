@@ -1,0 +1,183 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const projectModules = import.meta.glob('../../content/projects/*.md', { eager: true });
+const projectFiles = Object.values(projectModules).map((mod: any) => mod.frontmatter ? mod : { frontmatter: mod.default });
+const projects = projectFiles.sort(
+  (a: any, b: any) => new Date(b.frontmatter.date).getTime() - new Date(a.frontmatter.date).getTime()
+);
+
+const categories = [...new Set(projects.map(p => p.frontmatter.category))];
+---
+
+<Base title="Projects — Richard Axel Gunawan" current="/projects">
+
+  <section class="page-hero">
+    <div class="container">
+      <p class="section-label">All work</p>
+      <h1>Projects</h1>
+      <p class="page-sub">
+        Practical security work — network analysis, offensive techniques, and tooling.
+        Every project is documented for reproducibility.
+      </p>
+    </div>
+  </section>
+
+  <section class="projects-section">
+    <div class="container">
+      <div class="projects-list">
+        {projects.map((project, i) => (
+          <a
+            href={`/projects/${project.frontmatter.slug}`}
+            class="project-row"
+            style={`animation-delay: ${i * 0.08}s`}
+          >
+            <div class="project-row-left">
+              <div class="project-row-meta">
+                <span class={`tag ${project.frontmatter.status === 'in-progress' ? 'wip' : 'cyber'}`}>
+                  {project.frontmatter.status === 'in-progress' ? 'in progress' : project.frontmatter.category}
+                </span>
+                <span class="mono" style="font-size:0.68rem;color:var(--rock-dark)">{project.frontmatter.date}</span>
+              </div>
+              <h2 class="project-row-title">{project.frontmatter.title}</h2>
+              <p class="project-row-desc">{project.frontmatter.description}</p>
+              <div class="project-row-stack">
+                {project.frontmatter.stack.map(s => (
+                  <span class="tag">{s}</span>
+                ))}
+              </div>
+            </div>
+            <div class="project-row-right">
+              {project.frontmatter.outcome && (
+                <div class="project-outcome">
+                  <span class="mono" style="font-size:0.65rem;color:var(--surface);letter-spacing:0.08em;text-transform:uppercase">Outcome</span>
+                  <p class="outcome-text">{project.frontmatter.outcome}</p>
+                </div>
+              )}
+              <div class="project-row-arrow">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                  <path d="M4 10h12M11 5l5 5-5 5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+</Base>
+
+<style>
+.page-hero {
+  padding: calc(var(--nav-height) + var(--space-3xl)) 0 var(--space-2xl);
+}
+
+.page-sub {
+  max-width: 520px;
+  margin-top: 0.75rem;
+  font-size: 1rem;
+}
+
+.projects-section { padding-bottom: var(--space-3xl); }
+
+.projects-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.project-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 2rem;
+  align-items: start;
+  padding: var(--space-xl) 0;
+  border-bottom: 1px solid var(--slate);
+  text-decoration: none;
+  transition: padding-left 0.25s var(--ease-out);
+  animation: fadeUp 0.6s var(--ease-out) both;
+}
+
+.project-row:first-child { border-top: 1px solid var(--slate); }
+
+.project-row:hover { padding-left: 0.5rem; }
+
+.project-row-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.6rem;
+}
+
+.project-row-title {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: var(--rock-white);
+  margin-bottom: 0.5rem;
+  line-height: 1.3;
+}
+
+.project-row-desc {
+  font-size: 0.88rem;
+  color: var(--rock-mid);
+  line-height: 1.6;
+  margin-bottom: 0.75rem;
+  max-width: 520px;
+}
+
+.project-row-stack {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+
+.project-row-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 1rem;
+  min-width: 200px;
+  max-width: 240px;
+}
+
+.project-outcome {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  text-align: right;
+}
+
+.outcome-text {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  color: var(--rock-light);
+  line-height: 1.5;
+  font-style: italic;
+}
+
+.project-row-arrow {
+  color: var(--ocean);
+  opacity: 0;
+  transform: translateX(-4px);
+  transition: opacity 0.2s, transform 0.2s;
+}
+
+.project-row:hover .project-row-arrow {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+@media (max-width: 700px) {
+  .project-row {
+    grid-template-columns: 1fr;
+  }
+  .project-row-right {
+    align-items: flex-start;
+    min-width: unset;
+    max-width: unset;
+  }
+  .project-outcome { text-align: left; }
+}
+</style>

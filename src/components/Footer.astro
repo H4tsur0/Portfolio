@@ -1,0 +1,39 @@
+---
+const year = new Date().getFullYear();
+---
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <span class="footer-name">Richard</span>
+    <span class="footer-copy mono">Cybersecurity · Philosophy · {year}</span>
+  </div>
+</footer>
+
+<style>
+.footer {
+  border-top: 1px solid var(--slate);
+  padding: var(--space-xl) 0;
+  margin-top: var(--space-3xl);
+}
+
+.footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer-name {
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  color: var(--rock-mid);
+}
+
+.footer-copy {
+  font-size: 0.7rem;
+  color: var(--rock-dark);
+}
+
+@media (max-width: 500px) {
+  .footer-inner { flex-direction: column; gap: 0.5rem; text-align: center; }
+}
+</style>

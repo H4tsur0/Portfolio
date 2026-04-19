@@ -1,0 +1,45 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="Cybersecurity student, philosopher, and builder. Exploring the intersection of systems thinking and ethical inquiry."><title>Network Traffic Anomaly Detector — Richard</title><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><style>.project-detail[data-astro-cid-ovxcmftc]{padding-top:calc(var(--nav-height) + var(--space-3xl));padding-bottom:var(--space-3xl)}.project-header[data-astro-cid-ovxcmftc]{margin-bottom:var(--space-3xl);max-width:800px}.project-meta[data-astro-cid-ovxcmftc]{display:flex;align-items:center;gap:1rem;margin-bottom:1rem}.project-header[data-astro-cid-ovxcmftc] h1[data-astro-cid-ovxcmftc]{font-size:clamp(2.5rem,6vw,4rem);margin-bottom:1.5rem;color:var(--rock-white)}.project-summary[data-astro-cid-ovxcmftc]{font-size:1.2rem;color:var(--rock-light);line-height:1.6;margin-bottom:2rem}.project-tech[data-astro-cid-ovxcmftc]{display:flex;gap:.5rem;flex-wrap:wrap}.content-grid[data-astro-cid-ovxcmftc]{display:grid;grid-template-columns:1fr 300px;gap:4rem;align-items:start}.markdown-content[data-astro-cid-ovxcmftc]{font-family:var(--font-body);color:var(--rock-pale);line-height:1.8}.markdown-content[data-astro-cid-ovxcmftc] h2{color:var(--rock-white);margin-top:3rem;margin-bottom:1rem;font-family:var(--font-display)}.markdown-content[data-astro-cid-ovxcmftc] p{margin-bottom:1.5rem}.project-sidebar[data-astro-cid-ovxcmftc]{display:flex;flex-direction:column;gap:2rem}.sidebar-box[data-astro-cid-ovxcmftc]{padding:1.5rem;background:var(--depth);border:1px solid var(--slate);border-radius:12px}.sidebar-box[data-astro-cid-ovxcmftc] h3[data-astro-cid-ovxcmftc]{font-size:.7rem;text-transform:uppercase;color:var(--surface);margin-bottom:.75rem}.sidebar-box[data-astro-cid-ovxcmftc] p[data-astro-cid-ovxcmftc]{font-size:.9rem;color:var(--rock-mid);line-height:1.5}.project-footer[data-astro-cid-ovxcmftc]{margin-top:5rem;padding-top:2rem;border-top:1px solid var(--slate)}@media (max-width: 900px){.content-grid[data-astro-cid-ovxcmftc]{grid-template-columns:1fr}.project-sidebar[data-astro-cid-ovxcmftc]{order:-1}}
+</style>
+<link rel="stylesheet" href="/_astro/_slug_.BWJCrU5k.css"><script type="module">const e=document.getElementById("nav");function s(){window.scrollY>60?e?.classList.add("scrolled"):e?.classList.remove("scrolled")}window.addEventListener("scroll",s,{passive:!0});s();
+</script></head> <body> <nav id="nav" class="nav" data-astro-cid-dmqpwcec> <div class="nav-inner container" data-astro-cid-dmqpwcec> <a href="/" class="nav-name" data-astro-cid-dmqpwcec>Richard</a> <div class="nav-links" data-astro-cid-dmqpwcec> <a href="/projects" class="nav-link active" data-astro-cid-dmqpwcec> Projects </a><a href="/books" class="nav-link" data-astro-cid-dmqpwcec> Reading list </a> <a href="/#contact" class="nav-link nav-contact" data-astro-cid-dmqpwcec>Contact</a> </div> </div> </nav>   <main>  <article class="container project-detail" data-astro-cid-ovxcmftc> <header class="project-header" data-astro-cid-ovxcmftc> <div class="project-meta" data-astro-cid-ovxcmftc> <span class="tag cyber" data-astro-cid-ovxcmftc> forensics </span> <span class="mono" data-astro-cid-ovxcmftc>2024-03</span> </div> <h1 data-astro-cid-ovxcmftc>Network Traffic Anomaly Detector</h1> <p class="project-summary" data-astro-cid-ovxcmftc>A machine-learning pipeline that identifies anomalous network traffic patterns by analyzing pcap files and flagging deviations from learned baselines.</p> <div class="project-tech" data-astro-cid-ovxcmftc> <span class="tag" data-astro-cid-ovxcmftc>Python</span><span class="tag" data-astro-cid-ovxcmftc>Scikit-learn</span><span class="tag" data-astro-cid-ovxcmftc>Wireshark</span><span class="tag" data-astro-cid-ovxcmftc>Pandas</span><span class="tag" data-astro-cid-ovxcmftc>Matplotlib</span> </div> </header> <div class="content-grid" data-astro-cid-ovxcmftc> <div class="markdown-content" data-astro-cid-ovxcmftc> <h2 id="overview">Overview</h2>
+<p>Network intrusion detection is a problem of signal in noise. Modern enterprise networks generate terabytes of traffic daily, and the malicious packets are designed to look like the benign ones. This project builds a baseline behavioral model and flags deviations.</p>
+<h2 id="methodology">Methodology</h2>
+<h3 id="data-collection">Data collection</h3>
+<p>I used the CICIDS2017 dataset — a benchmark collection of labeled network flows including benign traffic and attacks like DDoS, port scanning, and brute force attempts. I also captured my own test traffic using Wireshark on a local lab network.</p>
+<h3 id="feature-engineering">Feature engineering</h3>
+<p>Raw packet captures are not directly usable for ML. I extracted 78 features per flow including:</p>
+<ul>
+<li>Packet inter-arrival times (mean, std, max)</li>
+<li>Flow duration and byte counts</li>
+<li>TCP flag frequencies</li>
+<li>Port entropy</li>
+</ul>
+<h3 id="model">Model</h3>
+<p>I trained an Isolation Forest for unsupervised anomaly detection and a Random Forest classifier for supervised labeling. The hybrid approach handles zero-day-like patterns the classifier hasn’t seen.</p>
+<h2 id="results">Results</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Metric</th><th>Score</th></tr></thead><tbody><tr><td>Detection rate</td><td>94.2%</td></tr><tr><td>False positive rate</td><td>1.8%</td></tr><tr><td>Avg inference time</td><td>3.2ms/flow</td></tr></tbody></table>
+<h2 id="reflection">Reflection</h2>
+<p>The most challenging part was feature selection. Many features are highly correlated — packet byte counts and flow duration tell overlapping stories. Dimensionality reduction via PCA improved both accuracy and inference speed.</p> </div> <aside class="project-sidebar" data-astro-cid-ovxcmftc> <div class="sidebar-box" data-astro-cid-ovxcmftc> <h3 class="mono" data-astro-cid-ovxcmftc>Outcome</h3> <p data-astro-cid-ovxcmftc>Achieved 94% detection accuracy on the CICIDS2017 dataset with &lt;2% false positive rate.</p> </div> <div class="sidebar-box" data-astro-cid-ovxcmftc> <h3 class="mono" data-astro-cid-ovxcmftc>Role</h3> <p data-astro-cid-ovxcmftc>Security Research & Implementation</p> </div> </aside> </div> <footer class="project-footer" data-astro-cid-ovxcmftc> <a href="/projects" class="link-more" data-astro-cid-ovxcmftc> <svg width="14" height="14" viewBox="0 0 14 14" fill="none" style="transform: rotate(180deg)" data-astro-cid-ovxcmftc> <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" data-astro-cid-ovxcmftc></path> </svg>
+Back to projects
+</a> </footer> </article>  </main> <footer class="footer" data-astro-cid-sz7xmlte> <div class="container footer-inner" data-astro-cid-sz7xmlte> <span class="footer-name" data-astro-cid-sz7xmlte>Richard</span> <span class="footer-copy mono" data-astro-cid-sz7xmlte>Cybersecurity · Philosophy · 2026</span> </div> </footer>  </body></html> 

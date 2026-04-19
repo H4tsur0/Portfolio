@@ -1,0 +1,30 @@
+[
+  {
+    "name": "CompTIA Security+",
+    "issuer": "CompTIA",
+    "date": "2024-01",
+    "status": "completed",
+    "credential": "SY0-701"
+  },
+  {
+    "name": "Google Cybersecurity Certificate",
+    "issuer": "Google / Coursera",
+    "date": "2023-08",
+    "status": "completed",
+    "credential": "GOOG-CYBER"
+  },
+  {
+    "name": "TryHackMe — Top 1%",
+    "issuer": "TryHackMe",
+    "date": "2023-05",
+    "status": "completed",
+    "credential": "THM"
+  },
+  {
+    "name": "Certified Ethical Hacker (CEH)",
+    "issuer": "EC-Council",
+    "date": "2025-06",
+    "status": "in-progress",
+    "credential": "CEH"
+  }
+]

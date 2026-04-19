@@ -1,0 +1,47 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="Cybersecurity student, philosopher, and builder. Exploring the intersection of systems thinking and ethical inquiry."><title>Password Audit &amp; Cracking Lab — Richard</title><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><style>.project-detail[data-astro-cid-ovxcmftc]{padding-top:calc(var(--nav-height) + var(--space-3xl));padding-bottom:var(--space-3xl)}.project-header[data-astro-cid-ovxcmftc]{margin-bottom:var(--space-3xl);max-width:800px}.project-meta[data-astro-cid-ovxcmftc]{display:flex;align-items:center;gap:1rem;margin-bottom:1rem}.project-header[data-astro-cid-ovxcmftc] h1[data-astro-cid-ovxcmftc]{font-size:clamp(2.5rem,6vw,4rem);margin-bottom:1.5rem;color:var(--rock-white)}.project-summary[data-astro-cid-ovxcmftc]{font-size:1.2rem;color:var(--rock-light);line-height:1.6;margin-bottom:2rem}.project-tech[data-astro-cid-ovxcmftc]{display:flex;gap:.5rem;flex-wrap:wrap}.content-grid[data-astro-cid-ovxcmftc]{display:grid;grid-template-columns:1fr 300px;gap:4rem;align-items:start}.markdown-content[data-astro-cid-ovxcmftc]{font-family:var(--font-body);color:var(--rock-pale);line-height:1.8}.markdown-content[data-astro-cid-ovxcmftc] h2{color:var(--rock-white);margin-top:3rem;margin-bottom:1rem;font-family:var(--font-display)}.markdown-content[data-astro-cid-ovxcmftc] p{margin-bottom:1.5rem}.project-sidebar[data-astro-cid-ovxcmftc]{display:flex;flex-direction:column;gap:2rem}.sidebar-box[data-astro-cid-ovxcmftc]{padding:1.5rem;background:var(--depth);border:1px solid var(--slate);border-radius:12px}.sidebar-box[data-astro-cid-ovxcmftc] h3[data-astro-cid-ovxcmftc]{font-size:.7rem;text-transform:uppercase;color:var(--surface);margin-bottom:.75rem}.sidebar-box[data-astro-cid-ovxcmftc] p[data-astro-cid-ovxcmftc]{font-size:.9rem;color:var(--rock-mid);line-height:1.5}.project-footer[data-astro-cid-ovxcmftc]{margin-top:5rem;padding-top:2rem;border-top:1px solid var(--slate)}@media (max-width: 900px){.content-grid[data-astro-cid-ovxcmftc]{grid-template-columns:1fr}.project-sidebar[data-astro-cid-ovxcmftc]{order:-1}}
+</style>
+<link rel="stylesheet" href="/_astro/_slug_.BWJCrU5k.css"><script type="module">const e=document.getElementById("nav");function s(){window.scrollY>60?e?.classList.add("scrolled"):e?.classList.remove("scrolled")}window.addEventListener("scroll",s,{passive:!0});s();
+</script></head> <body> <nav id="nav" class="nav" data-astro-cid-dmqpwcec> <div class="nav-inner container" data-astro-cid-dmqpwcec> <a href="/" class="nav-name" data-astro-cid-dmqpwcec>Richard</a> <div class="nav-links" data-astro-cid-dmqpwcec> <a href="/projects" class="nav-link active" data-astro-cid-dmqpwcec> Projects </a><a href="/books" class="nav-link" data-astro-cid-dmqpwcec> Reading list </a> <a href="/#contact" class="nav-link nav-contact" data-astro-cid-dmqpwcec>Contact</a> </div> </div> </nav>   <main>  <article class="container project-detail" data-astro-cid-ovxcmftc> <header class="project-header" data-astro-cid-ovxcmftc> <div class="project-meta" data-astro-cid-ovxcmftc> <span class="tag cyber" data-astro-cid-ovxcmftc> red team </span> <span class="mono" data-astro-cid-ovxcmftc>2023-10</span> </div> <h1 data-astro-cid-ovxcmftc>Password Audit &amp; Cracking Lab</h1> <p class="project-summary" data-astro-cid-ovxcmftc>A controlled lab environment for testing password policy strength using Hashcat and John the Ripper against intentionally weak credential databases.</p> <div class="project-tech" data-astro-cid-ovxcmftc> <span class="tag" data-astro-cid-ovxcmftc>Hashcat</span><span class="tag" data-astro-cid-ovxcmftc>John the Ripper</span><span class="tag" data-astro-cid-ovxcmftc>Python</span><span class="tag" data-astro-cid-ovxcmftc>Kali Linux</span> </div> </header> <div class="content-grid" data-astro-cid-ovxcmftc> <div class="markdown-content" data-astro-cid-ovxcmftc> <h2 id="overview">Overview</h2>
+<p>Password policies are the most consistently underestimated security control. Organizations spend millions on firewalls and endpoint protection, then store SHA1-hashed passwords without salting. This lab quantifies exactly how bad that is.</p>
+<h2 id="setup">Setup</h2>
+<p>I built a controlled environment with three components:</p>
+<ol>
+<li>A weak credential database — 500 accounts with intentionally policy-violating passwords (common words, keyboard walks, name + year patterns)</li>
+<li>Hashcat configured with multiple attack modes</li>
+<li>A measurement layer tracking crack rates over time</li>
+</ol>
+<h2 id="attack-modes-tested">Attack modes tested</h2>
+<p><strong>Dictionary attack</strong> — using the rockyou.txt wordlist (14 million entries). Most effective for common passwords.</p>
+<p><strong>Rule-based attack</strong> — applying transformation rules to dictionary words (capitalize first letter, append numbers, substitute letters). Dramatically increased coverage.</p>
+<p><strong>Hybrid attack</strong> — combining wordlist with mask patterns. This hit the <code>word + year</code> pattern that many password policies accidentally encourage.</p>
+<h2 id="results">Results</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Attack mode</th><th>Passwords cracked</th><th>Time</th></tr></thead><tbody><tr><td>Dictionary</td><td>43%</td><td>12 min</td></tr><tr><td>Rule-based</td><td>64%</td><td>47 min</td></tr><tr><td>Hybrid</td><td>78%</td><td>1h 54m</td></tr></tbody></table>
+<h2 id="recommendations-documented">Recommendations documented</h2>
+<p>The most important finding: requiring “complexity” (uppercase + number + symbol) without requiring length produces passwords that are harder for humans to remember but not harder for machines to crack. Minimum 16-character passphrases outperform complexity requirements on both usability and security.</p> </div> <aside class="project-sidebar" data-astro-cid-ovxcmftc> <div class="sidebar-box" data-astro-cid-ovxcmftc> <h3 class="mono" data-astro-cid-ovxcmftc>Outcome</h3> <p data-astro-cid-ovxcmftc>Cracked 78% of MD5-hashed passwords in under 2 hours using hybrid attack mode. Documented policy recommendations.</p> </div> <div class="sidebar-box" data-astro-cid-ovxcmftc> <h3 class="mono" data-astro-cid-ovxcmftc>Role</h3> <p data-astro-cid-ovxcmftc>Security Research & Implementation</p> </div> </aside> </div> <footer class="project-footer" data-astro-cid-ovxcmftc> <a href="/projects" class="link-more" data-astro-cid-ovxcmftc> <svg width="14" height="14" viewBox="0 0 14 14" fill="none" style="transform: rotate(180deg)" data-astro-cid-ovxcmftc> <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" data-astro-cid-ovxcmftc></path> </svg>
+Back to projects
+</a> </footer> </article>  </main> <footer class="footer" data-astro-cid-sz7xmlte> <div class="container footer-inner" data-astro-cid-sz7xmlte> <span class="footer-name" data-astro-cid-sz7xmlte>Richard</span> <span class="footer-copy mono" data-astro-cid-sz7xmlte>Cybersecurity · Philosophy · 2026</span> </div> </footer>  </body></html> 

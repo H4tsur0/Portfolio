@@ -1,0 +1,37 @@
+---
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+  current?: string;
+}
+
+const {
+  title = 'Richard — Cybersecurity & Philosophy',
+  description = 'Cybersecurity student, philosopher, and builder. Exploring the intersection of systems thinking and ethical inquiry.',
+  current = '',
+} = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content={description} />
+  <title>{title}</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+</head>
+<body>
+  <Nav current={current} />
+  <main>
+    <slot />
+  </main>
+  <Footer />
+</body>
+</html>
