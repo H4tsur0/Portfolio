@@ -55,13 +55,6 @@ const Hero: React.FC<HeroProps> = ({ currentlyReading }) => {
             <em>Sometimes the same systems.</em>
           </motion.p>
 
-          <motion.div variants={item} className="hero-currently">
-            <span className="currently-dot"></span>
-            <span className="currently-label mono">currently reading</span>
-            <span className="currently-title">{currentlyReading.title}</span>
-            <span className="currently-author mono">— {currentlyReading.author}</span>
-          </motion.div>
-
           <motion.div variants={item} className="hero-cta">
             <a href="/projects" className="btn-primary">View projects</a>
             <a href="#contact" className="btn-ghost">Get in touch</a>
