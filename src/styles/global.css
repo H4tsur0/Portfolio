@@ -130,7 +130,7 @@ img { max-width: 100%; display: block; }
   font-family: var(--font-mono);
   font-size: 0.75rem;
   letter-spacing: 0.04em;
-  color: var(--rock-mid);
+  color: var(--rock-pale);
 }
 
 /* ── Divider ── */
@@ -150,7 +150,7 @@ img { max-width: 100%; display: block; }
   padding: 2px 8px;
   border-radius: 3px;
   border: 1px solid var(--slate);
-  color: var(--rock-mid);
+  color: var(--rock-pale);
   background: var(--depth);
 }
 
@@ -181,7 +181,7 @@ img { max-width: 100%; display: block; }
   font-size: 0.7rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--surface);
+  color: var(--mist);
   margin-bottom: var(--space-md);
 }
 
