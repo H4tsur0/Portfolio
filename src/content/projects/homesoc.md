@@ -1,33 +1,28 @@
 ---
-title: "Network Traffic Anomaly Detector"
-slug: "network-anomaly-detector"
-description: "A machine-learning pipeline that identifies anomalous network traffic patterns by analyzing pcap files and flagging deviations from learned baselines."
-stack: ["Python", "Scikit-learn", "Wireshark", "Pandas", "Matplotlib"]
-category: "forensics"
+title: "HomeSOC"
+slug: "homesoc"
+description: "A self-hosted Security Operations Center (SOC) home lab built on Fedora Linux. Features centralized log management, real-time network and host-based intrusion detection (NIDS/HIDS), and automated threat intelligence integration with Telegram alerting."
+stack: ["Fedora", "Wazuh", "Suricata", "Loki", "Grafana", "Alloy", "Python", "Firewalld", "Telegram Bot", "OpenSearch", "Filebeat"]
+category: "Defensive"
 featured: true
 status: "completed"
-date: "2024-03"
-outcome: "Achieved 94% detection accuracy on the CICIDS2017 dataset with <2% false positive rate."
+date: "2026-04"
+outcome: "Achieved a complete working set up of the Alerts system on both Telegram and Grafana Dashboard."
 ---
 
 ## Overview
 
-Network intrusion detection is a problem of signal in noise. Modern enterprise networks generate terabytes of traffic daily, and the malicious packets are designed to look like the benign ones. This project builds a baseline behavioral model and flags deviations.
+A fully operational, self-hosted Security Operations Center built on a Fedora Linux mini PC. HomeSOC detects network intrusions, monitors host activity across two machines, aggregates all logs into a unified dashboard, and delivers real-time threat alerts to your phone — built entirely with free, open-source tools used in enterprise SOCs.
 
 ## Methodology
 
-### Data collection
+### Detection
 
-I used the CICIDS2017 dataset — a benchmark collection of labeled network flows including benign traffic and attacks like DDoS, port scanning, and brute force attempts. I also captured my own test traffic using Wireshark on a local lab network.
+I used the default rules of suricata IDS with some aditional alert rules i implemented myself and Wazuh HIDS with basic alert rules connected to a Lenovo T14(agent).
 
-### Feature engineering
+### Log Ship
 
-Raw packet captures are not directly usable for ML. I extracted 78 features per flow including:
-
-- Packet inter-arrival times (mean, std, max)
-- Flow duration and byte counts
-- TCP flag frequencies
-- Port entropy
+I used Loki as an indexer to compile the alerts from both Suricata and Wazuh, and ship the logs using Alloy towards Grafana. The Alloy will also ship the alerts to the telegram bot when alert level is high.
 
 ### Model
 
