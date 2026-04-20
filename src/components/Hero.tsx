@@ -43,7 +43,7 @@ const Hero: React.FC<HeroProps> = ({ currentlyReading }) => {
       >
         <div className="hero-text">
           <motion.p variants={item} className="hero-label mono">
-            cybersecurity · philosophy
+            Cybersecurity Enthusiast
           </motion.p>
           
           <motion.h1 variants={item} className="hero-name">
@@ -51,8 +51,8 @@ const Hero: React.FC<HeroProps> = ({ currentlyReading }) => {
           </motion.h1>
           
           <motion.p variants={item} className="hero-tagline">
-            I secure systems and question foundations.<br/>
-            <em>Sometimes the same systems.</em>
+            Hi :D, This is my personal portfolio. I will use it to compile my projects, certifications, and other interests.<br/>
+            <em>"Where your talents and the needs of the world cross, there lies your vocation. — Aristotle"</em>
           </motion.p>
 
           <motion.div variants={item} className="hero-cta">
