@@ -44,10 +44,12 @@ const { frontmatter } = project;
             <p>{frontmatter.outcome}</p>
           </div>
         )}
-        <div class="sidebar-box">
-          <h3 class="mono">Role</h3>
-          <p>Security Research & Implementation</p>
-        </div>
+        {frontmatter.role && (
+          <div class="sidebar-box">
+            <h3 class="mono">Role</h3>
+            <p>{frontmatter.role}</p>
+          </div>
+        )}
       </aside>
     </div>
 

@@ -47,7 +47,7 @@ const Hero: React.FC<HeroProps> = ({ currentlyReading }) => {
           </motion.p>
           
           <motion.h1 variants={item} className="hero-name">
-            Richard Axel Gunawan
+            Richard
           </motion.h1>
           
           <motion.p variants={item} className="hero-tagline">

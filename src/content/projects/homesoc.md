@@ -8,6 +8,7 @@ featured: true
 status: "completed"
 date: "2026-04"
 outcome: "Achieved a complete working set up of the Alerts system on both Telegram and Grafana Dashboard."
+role: Alerts Analyst
 ---
 
 ## Overview
@@ -18,24 +19,24 @@ A fully operational, self-hosted Security Operations Center built on a Fedora Li
 
 ### Detection
 
-I used the default rules of suricata IDS with some aditional alert rules i implemented myself and Wazuh HIDS with basic alert rules connected to a Lenovo T14(agent).
+I used the default rules of suricata NIDS with some aditional alert rules i implemented myself and Wazuh HIDS with basic alert rules connected to a Lenovo T14(agent).
 
 ### Log Ship
 
-I used Loki as an indexer to compile the alerts from both Suricata and Wazuh, and ship the logs using Alloy towards Grafana. The Alloy will also ship the alerts to the telegram bot when alert level is high.
+I used Loki as an indexer to compile the alerts from both Suricata and Wazuh, and ship the logs using Alloy towards Grafana. The Alloy will also ship the alerts to the telegram bot when alert severity is above a certain level.
 
 ### Model
 
-I trained an Isolation Forest for unsupervised anomaly detection and a Random Forest classifier for supervised labeling. The hybrid approach handles zero-day-like patterns the classifier hasn't seen.
+The environment consists of a centralized management node and distributed endpoints, integrating host-based and network-based detection.
 
-## Results
+- Central SOC Node (Intel NUC): Fedora 42 server hosting the Wazuh Manager, Indexer, Dashboard, and Suricata IDS.
+- Monitored Endpoint (ThinkPad T14): Fedora 42 workstation running the Wazuh Agent for real-time telemetry.
+- Alert Engine: Custom Python engine tailing JSON logs, performing VirusTotal IP reputation lookups, and routing critical alerts to Telegram.
 
-| Metric | Score |
-|--------|-------|
-| Detection rate | 94.2% |
-| False positive rate | 1.8% |
-| Avg inference time | 3.2ms/flow |
+## Documentation
+
+Visit our webpage for the full guide: https://kat2120.github.io/SOCHomeLab/index.html
 
 ## Reflection
 
-The most challenging part was feature selection. Many features are highly correlated — packet byte counts and flow duration tell overlapping stories. Dimensionality reduction via PCA improved both accuracy and inference speed.
+Since this was my very first time doing a security based project myself, i learned a lot more about how NIDS and HIDS works, and i learned more about how grafana create visual graphs and design a dashboard from logs, and how grafana itself receives logs from Suricata and Wazuh.
