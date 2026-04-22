@@ -5,7 +5,7 @@ author: "Roger J. Hamilton"
 year: 2002
 featured: true
 status: "completed"
-date_read: "2024-05"
+date_read: "2025-07"
 takeaway: "Wealth is not what you have, it’s what you are left with when you lose all your money."
 ---
 

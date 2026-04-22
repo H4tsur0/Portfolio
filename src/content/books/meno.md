@@ -1,9 +1,9 @@
 ---
 title: "Meno"
 slug: "meno"
-author: Plato"
+author: "Plato"
 year: 402 B.C.E.
-featured: true
+featured: false
 status: "completed"
 date_read: "2025-09"
 takeaway: "All learning is but recollection."
@@ -11,7 +11,7 @@ takeaway: "All learning is but recollection."
 
 ## My reading
 
-Reading the Meno feels like a direct challenge to my approach to learning. It forces me to ask: Am I just collecting 'Right Opinions'? copying code, following frameworks, and mimicking success—or am I doing the hard work of 'tying down' that knowledge through reasoning? It’s a humbling realization that the moments of confusion and 'numbness' I feel when facing a complex problem aren't signs of failure, but the necessary starting point for true recollection.
+Reading the Meno feels like a direct challenge to my approach to learning. It forces me to ask: Am I just collecting 'Right Opinions'? copying code, following frameworks, and mimicking success, or am I doing the hard work of 'tying down' that knowledge through reasoning? It’s a humbling realization that the moments of confusion and 'numbness' I feel when facing a complex problem aren't signs of failure, but the necessary starting point for true recollection.
 
 ## The Soul as a Reservoir
 
