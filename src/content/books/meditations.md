@@ -1,30 +1,35 @@
 ---
-title: "Meditations"
-slug: "meditations"
-author: "Marcus Aurelius"
-year: 170
+title: "Meno"
+slug: "meno"
+author: Plato"
+year: 402 B.C.E.
 featured: true
 status: "completed"
-date_read: "2023-11"
-takeaway: "A private journal that became one of the most precise operating manuals for living under pressure."
+date_read: "2025-09"
+takeaway: "All learning is but recollection."
 ---
 
 ## My reading
 
-*Meditations* was never meant to be published. Marcus Aurelius wrote these notes to himself while running the Roman Empire — arguably the most stressful job in human history at the time. That context changes everything about how you read it.
+Reading the Meno feels like a direct challenge to my approach to learning. It forces me to ask: Am I just collecting 'Right Opinions'? copying code, following frameworks, and mimicking success—or am I doing the hard work of 'tying down' that knowledge through reasoning? It’s a humbling realization that the moments of confusion and 'numbness' I feel when facing a complex problem aren't signs of failure, but the necessary starting point for true recollection.
 
-This is not a polished philosophical treatise. It's a man reminding himself, repeatedly, of things he already knows but keeps forgetting. Which is exactly what philosophy is for.
+## The Soul as a Reservoir
 
-## What I took seriously
+You aren't an empty vessel being filled by teachers. You are a vast library that has forgotten its own index. Your job in life is to "probe" yourself until the knowledge resurfaces.
 
-The Stoic frame of separating what you control from what you don't is not a passive resignation. It's a precision tool. When I'm debugging a security incident at 2am, the question "is this within my control right now?" is not abstract — it determines whether I'm thinking clearly or spiraling.
+## The Danger of "Correctness"
 
-> You have power over your mind, not outside events. Realize this, and you will find strength.
+You can be "correct" without being "wise". If you succeed by luck or just by following rules, you are fragile. Only when you understand the "why" (the reasoning) does your excellence become permanent.
 
-## What I pushed back on
+> "True opinions are not of much value until one fastens them by the tie of the cause."
 
-Aurelius sometimes tips from equanimity into emotional suppression. There's a version of Stoicism that reads as "feel nothing." I don't think that's what he meant, but it's a real failure mode of the practice.
+## The Power of "Aporia"
 
-## The discipline question
+Aporia is that state of "numbness" or confusion Meno felt. Socrates argues this is the most important part of learning. Until you realize you don't know something, you will never bother to "remember" it.
 
-What interested me most was his relentless return to *discipline* — not as self-punishment but as self-authorship. He's essentially asking: if I don't consciously decide who I am, what am I? This maps onto information security in a way I didn't expect. Good security hygiene is also about deliberate habits vs passive drift.
+> "He who does not know, and feels the difficulty, is better off than he who thinks he knows."
+
+## Questions This Raised
+
+- Is virtue a gift, a habit, or a lesson?
+- Is being right 'by accident' enough?
